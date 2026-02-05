@@ -386,7 +386,7 @@ class PS4000(_PicoscopeBase):
 
     def _lowLevelClearDataBuffer(self, channel, downSampleMode, segmentIndex):
         m = self.lib.ps4000SetDataBuffer(c_int16(self.handle), c_enum(channel),
-                                         c_void_p(), c_uint32(0), c_enum(0))
+                                         c_void_p(), c_uint32(0))
         self.checkResult(m)
 
     def _lowLevelGetValues(self, numSamples, startIndex, downSampleRatio,
